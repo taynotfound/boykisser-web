@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boykisser Linux :3</title>
+<meta name="description" content="Boykisser Linux — a gay, gimmicky, daily-drivable Debian-based distro with XFCE. Flatpak out of the box, Steam, OBS virtual camera, and the cutest theme on the planet.">
+<meta property="og:title" content="Boykisser Linux :3">
+<meta property="og:description" content="A gay, gimmicky, daily-drivable Debian distro with XFCE. :3">
+<meta property="og:image" content="assets/boykisser.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ff5fa2">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="paws" aria-hidden="true"></div>
+
+<header class="hero">
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <img src="assets/favicon.png" alt="" width="28" height="28">
+      <span>Boykisser&nbsp;Linux</span>
+    </a>
+    <div class="nav-links">
+      <a href="#what">What is it</a>
+      <a href="#inside">Inside</a>
+      <a href="#get">Get it</a>
+      <a href="https://github.com/taynotfound/BoykisserLinux">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner" id="top">
+    <img class="hero-cat" src="assets/boykisser.png" alt="The Boykisser mascot" width="240">
+    <h1>Boykisser&nbsp;Linux <span class="uwu">:3</span></h1>
+    <p class="tagline">A pink Debian spin I actually run on my own machine.<br>XFCE underneath, Boykisser all the way up.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Download the latest build</a>
+      <a class="btn" href="https://github.com/taynotfound/BoykisserLinux">Source</a>
+      <a class="btn btn-discord" href="https://discord.gg/3ZpwE9PPfP">Discord</a>
+    </div>
+    <p class="subtle">Debian&nbsp;13 (trixie) · amd64 · boots on UEFI and old BIOS boxes</p>
+  </div>
+</header>
+
+<main>
+
+<section id="what" class="section lede">
+  <p>
+    It's Debian 13 with XFCE, themed pink from the boot menu all the way to the login
+    screen. Flatpak and Flathub are already set up before you ever log in, Steam and OBS
+    work, and there's a normal one-button installer when you're ready to keep it.
+  </p>
+  <p>
+    I made it because I wanted a daily driver that looked like <em>me</em> and didn't
+    get in my way. It's a hobby project by one person, so there's the odd rough edge —
+    but it's plain Debian under the paint, nothing cursed.
+  </p>
+</section>
+
+<section id="inside" class="section">
+  <h2>What's already set up</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>The whole pink look</h3>
+      <p>
+        Themed XFCE with Tela-circle icons, a Boykisser start button, custom Plymouth
+        splash and a matching GRUB menu. There's a single toggle that flips the desktop
+        between light and dark.
+      </p>
+    </div>
+    <div class="feature">
+      <h3>Games run</h3>
+      <p>
+        Steam, Heroic, GameMode and MangoHud are in the image, with 32-bit libraries
+        turned on so your library actually launches instead of sulking.
+      </p>
+    </div>
+    <div class="feature">
+      <h3>Made for recording</h3>
+      <p>
+        OBS Studio ships with a working virtual camera (v4l2loopback), so streaming,
+        recording, and looking decent on calls all work without the usual fight.
+      </p>
+    </div>
+    <div class="feature">
+      <h3>Hardware, broadly</h3>
+      <p>
+        Wide firmware coverage and Nouveau by default so it boots more or less anywhere.
+        Got an NVIDIA card? There's a one-click helper to pull the proprietary driver
+        once you've installed.
+      </p>
+    </div>
+  </div>
+
+  <p class="apps-intro">Out of the box you also get:</p>
+  <ul class="apps">
+    <li>Firefox</li>
+    <li>VS&nbsp;Code Insiders</li>
+    <li>VLC</li>
+    <li>GNOME Software</li>
+    <li>GParted</li>
+    <li>Thunar</li>
+  </ul>
+  <p class="apps-intro">…and these land on first boot via Flatpak:</p>
+  <ul class="apps">
+    <li>Discord</li>
+    <li>Flatseal</li>
+    <li>Gear&nbsp;Lever</li>
+  </ul>
+</section>
+
+<section id="get" class="section alt">
+  <h2>Getting it onto a stick</h2>
+  <p class="get-note">
+    Every release links a <strong>direct mirror</strong> and a <strong>torrent</strong> on
+    the Internet Archive — one whole ISO, no zip parts to glue back together.
+  </p>
+  <ol class="steps">
+    <li>
+      Open the <a href="https://github.com/taynotfound/BoykisserLinux/releases/latest">latest
+      release</a> and grab <code>boykisser-linux-amd64.iso</code> from the mirror or torrent.
+    </li>
+    <li>
+      Check it matches (the release ships <code>SHA256SUMS</code>):
+      <pre><code>sha256sum -c SHA256SUMS</code></pre>
+    </li>
+    <li>
+      Write it to a USB stick — <strong>double-check the drive letter</strong>, this wipes it:
+      <pre><code>sudo dd if=boykisser-linux-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync</code></pre>
+    </li>
+    <li>Boot it, poke around the live desktop, then run <strong>Install Boykisser Linux</strong> when you're happy.</li>
+  </ol>
+</section>
+
+<section id="honest" class="section heads-up">
+  <h2>Before you flame me</h2>
+  <p>
+    This is a one-person hobby distro, and I leaned on AI a fair bit while building it —
+    the repo even has a <code>README.sh</code> that says so out loud. It's not affiliated
+    with Debian, and things will occasionally be janky. If something breaks or you just
+    want to say hi, the <a href="https://discord.gg/3ZpwE9PPfP">Discord</a> is the place.
+  </p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <img src="assets/favicon.png" alt="" width="40" height="40">
+  <p>Boykisser Linux — put together by <a href="https://github.com/taynotfound">taynotfound</a></p>
+  <div class="footer-links">
+    <a href="https://github.com/taynotfound/BoykisserLinux">GitHub</a>
+    <a href="https://discord.gg/3ZpwE9PPfP">Discord</a>
+    <a href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Download</a>
+  </div>
+  <p class="subtle">Debian is a trademark of Software in the Public Interest, Inc. Boykisser Linux is not affiliated with Debian.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
