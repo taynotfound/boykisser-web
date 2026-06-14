@@ -4,3 +4,4 @@ The landing page for [Boykisser Linux](https://github.com/taynotfound/BoykisserL
 served at **[boykisser.taymaerz.de](https://boykisser.taymaerz.de)**.
 
 Plain static HTML + CSS + a sprinkle of JS. No build step. :3
+
