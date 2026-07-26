@@ -88,6 +88,7 @@
     </a>
     <div class="nav-links">
       <a href="#what">What is it</a>
+      <a href="#shots">Screenshots</a>
       <a href="#inside">Inside</a>
       <a href="#get">Get it</a>
       <a href="https://github.com/taynotfound/BoykisserLinux">GitHub</a>
@@ -115,12 +116,27 @@
     It's Debian 13 with XFCE, themed pink from the boot menu all the way to the login
     screen. Flatpak and Flathub are already set up before you ever log in, Steam and OBS
     work, and there's a normal one-button installer when you're ready to keep it.
+    Prefer KDE Plasma? The installer lets you pick it and pulls it in for you.
   </p>
   <p>
     I made it because I wanted a daily driver that looked like - me -  and didn't
     get in my way. It's a hobby project by one person, so there's the odd rough edge -
     but it's plain Debian under the paint, nothing cursed.
   </p>
+</section>
+
+<section id="shots" class="section">
+  <h2>What it looks like</h2>
+  <div class="shots">
+    <figure class="shot">
+      <a href="assets/screenshots/xfce.png"><img src="assets/screenshots/xfce.png" alt="Boykisser Linux XFCE desktop — pink themed panel, Whisker menu and Boykisser wallpaper" loading="lazy"></a>
+      <figcaption>XFCE — the default desktop, straight off the live ISO</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="assets/screenshots/kde.png"><img src="assets/screenshots/kde.png" alt="Boykisser Linux KDE Plasma desktop — pink accent, Tela-circle icons and Boykisser wallpaper" loading="lazy"></a>
+      <figcaption>KDE Plasma — pick it in the installer, same pink treatment</figcaption>
+    </figure>
+  </div>
 </section>
 
 <section id="inside" class="section">
@@ -194,7 +210,9 @@
       Write it to a USB stick - <strong>double-check the drive letter</strong>, this wipes it:
       <pre><code>sudo dd if=boykisser-linux-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync</code></pre>
     </li>
-    <li>Boot it, poke around the live desktop, then run <strong>Install Boykisser Linux</strong> when you're happy.</li>
+    <li>Boot it and poke around the live desktop. If it ever asks you to log in,
+      the live user is <code>boykisser</code> with password <code>live</code>.</li>
+    <li>Run <strong>Install Boykisser Linux</strong> when you're happy.</li>
   </ol>
 </section>
 
