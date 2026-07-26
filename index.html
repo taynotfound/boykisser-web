@@ -116,7 +116,8 @@
     It's Debian 13 with XFCE, themed pink from the boot menu all the way to the login
     screen. Flatpak and Flathub are already set up before you ever log in, Steam and OBS
     work, and there's a normal one-button installer when you're ready to keep it.
-    Prefer KDE Plasma? The installer lets you pick it and pulls it in for you.
+    Prefer KDE Plasma? The installer lets you pick it — and it can pull in optional app
+    bundles for gaming, streaming, development or office work while it's at it.
   </p>
   <p>
     I made it because I wanted a daily driver that looked like - me -  and didn't
@@ -172,6 +173,22 @@
         once you've installed.
       </p>
     </div>
+    <div class="feature">
+      <h3>The Boykisser center</h3>
+      <p>
+        One friendly hub for everything: system updates with automatic Timeshift
+        snapshots, app presets, a browser chooser, a de-bloat picker, NVIDIA drivers,
+        newer kernels from backports and a built-in bug reporter.
+      </p>
+    </div>
+    <div class="feature">
+      <h3>Sensible defaults</h3>
+      <p>
+        Firewall on, automatic security updates, zram swap, night light, weekly SSD
+        TRIM, printing and firmware updates — all preconfigured. The live boot menu
+        even speaks seven languages.
+      </p>
+    </div>
   </div>
 
   <p class="apps-intro">Out of the box you also get:</p>
@@ -196,7 +213,13 @@
   <p class="get-note">
     Every release links a <strong>direct mirror</strong> and a <strong>torrent</strong> on
     the Internet Archive - one whole ISO, no zip parts to glue back together.
+    There are two flavours: the <strong>full ISO</strong> (everything offline) and a slim
+    <strong>netinstall ISO</strong> that downloads the heavy apps on first boot.
   </p>
+  <div class="cta" id="flavour-links" hidden>
+    <a class="btn btn-primary" id="dl-full" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Full ISO</a>
+    <a class="btn" id="dl-netinstall" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Netinstall ISO</a>
+  </div>
   <ol class="steps">
     <li>
       Open the <a href="https://github.com/taynotfound/BoykisserLinux/releases/latest">latest

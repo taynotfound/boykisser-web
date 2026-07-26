@@ -11,6 +11,17 @@
       const date = rel.published_at ? new Date(rel.published_at).toLocaleDateString() : "";
       info.textContent = ` · latest: ${rel.tag_name}${date ? " (" + date + ")" : ""}`;
     }
+    // direct mirror links for both flavours, parsed from the release notes
+    const body = rel.body || "";
+    const isoUrls = body.match(/https:\/\/archive\.org\/download\/\S+\.iso/g) || [];
+    const full = isoUrls.find(u => !u.includes("netinstall"));
+    const net = isoUrls.find(u => u.includes("netinstall"));
+    const wrap = document.getElementById("flavour-links");
+    if (wrap && (full || net)) {
+      if (full) document.getElementById("dl-full").href = full;
+      if (net) document.getElementById("dl-netinstall").href = net;
+      wrap.hidden = false;
+    }
   } catch { /* offline or rate-limited — the static link still works */ }
 })();
 
