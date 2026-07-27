@@ -15,6 +15,22 @@
 
 html { scroll-behavior: smooth; }
 
+::selection { background: var(--pink); color: #2a0a1c; }
+
+/* slim pink scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--pink) var(--bg); }
+
+/* scroll progress bar */
+.progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--pink), var(--pink-soft));
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(255, 95, 162, 0.7);
+}
+
 body {
   margin: 0;
   font-family: "Quicksand", ui-rounded, system-ui, sans-serif;
@@ -42,17 +58,38 @@ a:hover { color: #fff; }
   z-index: 1;
   border-bottom: 1px solid var(--border);
   padding-bottom: 3.5rem;
+  overflow: hidden;
+}
+
+/* soft pink glow behind the mascot */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(255, 95, 162, 0.18), transparent 65%);
+  pointer-events: none;
 }
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: 1.1rem 1.5rem;
   flex-wrap: wrap;
   gap: 0.75rem;
+  background: rgba(20, 16, 25, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
 .brand {
@@ -114,16 +151,28 @@ h1 {
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--ink);
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+              transform 0.15s ease, box-shadow 0.15s ease;
 }
-.btn:hover { background: var(--surface-2); border-color: var(--border-pink); color: #fff; }
+.btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-pink);
+  color: #fff;
+  transform: translateY(-2px);
+}
 
 .btn-primary {
   background: var(--pink);
   border-color: var(--pink);
   color: #2a0a1c;
+  box-shadow: 0 4px 18px rgba(255, 95, 162, 0.35);
 }
-.btn-primary:hover { background: var(--pink-soft); border-color: var(--pink-soft); color: #2a0a1c; }
+.btn-primary:hover {
+  background: var(--pink-soft);
+  border-color: var(--pink-soft);
+  color: #2a0a1c;
+  box-shadow: 0 6px 26px rgba(255, 95, 162, 0.55);
+}
 
 .btn-discord:hover { background: #5865f2; border-color: #5865f2; color: #fff; }
 
@@ -176,6 +225,12 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.3rem 1.4rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.feature:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-pink);
+  box-shadow: 0 10px 30px rgba(255, 95, 162, 0.12);
 }
 .feature h3 {
   margin: 0 0 0.5rem;
@@ -197,7 +252,9 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 0.6rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
+.shot:hover { transform: scale(1.015); border-color: var(--border-pink); }
 .shot img {
   width: 100%;
   height: auto;
@@ -254,6 +311,7 @@ h2 {
 .steps li { margin-bottom: 1rem; }
 
 pre {
+  position: relative;
   background: #0d0a12;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -263,6 +321,74 @@ pre {
 }
 code { font-family: "Fira Code", ui-monospace, monospace; color: var(--pink-soft); }
 pre code { color: var(--ink); font-size: 0.88rem; }
+
+/* copy button on code blocks */
+.copy-btn {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 0.15rem 0.55rem;
+  font: 600 0.75rem "Quicksand", sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.copy-btn:hover { color: #fff; border-color: var(--border-pink); }
+.copy-btn.copied { color: #2a0a1c; background: var(--pink); border-color: var(--pink); }
+
+/* ---------- fake terminal ---------- */
+.term {
+  max-width: 720px;
+  margin: 2.4rem auto 0;
+  background: #0d0a12;
+  border: 1px solid var(--border-pink);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 44px rgba(255, 95, 162, 0.12);
+  font-family: "Fira Code", ui-monospace, monospace;
+  font-size: 0.88rem;
+}
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--surface);
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.term-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+.dot-r { background: #ff5f57; } .dot-y { background: #febc2e; } .dot-g { background: #28c840; }
+.term-bar .title { margin-left: 0.5rem; }
+.term-body { padding: 1rem 1.1rem 1.2rem; min-height: 220px; }
+.term-body .line { white-space: pre-wrap; word-break: break-word; }
+.term-body .prompt { color: var(--pink); font-weight: 700; }
+.term-body .out { color: var(--muted); }
+.term-body .hl { color: var(--pink-soft); }
+.caret {
+  display: inline-block;
+  width: 8px; height: 1em;
+  background: var(--pink);
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.shown { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-cat { animation: none; }
+}
 
 /* ---------- footer ---------- */
 .footer {

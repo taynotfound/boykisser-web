@@ -27,7 +27,6 @@
 
 // click anywhere, leave a little trail of kisses
 const KISSES = [":3", "🐾", "💕", ":3c", "♡"];
-
 document.addEventListener("click", (e) => {
   const kiss = document.createElement("span");
   kiss.textContent = KISSES[Math.floor(Math.random() * KISSES.length)];
@@ -48,3 +47,86 @@ document.addEventListener("click", (e) => {
   });
   setTimeout(() => kiss.remove(), 800);
 });
+
+// scroll progress bar
+const progress = document.querySelector(".progress");
+if (progress) {
+  const update = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = max > 0 ? `${(scrollY / max) * 100}%` : "0";
+  };
+  addEventListener("scroll", update, { passive: true });
+  update();
+}
+
+// scroll-reveal: sections, feature cards and screenshots fade in
+const revealables = document.querySelectorAll(".section, .feature, .shot");
+revealables.forEach((el) => el.classList.add("reveal"));
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (e.isIntersecting) {
+      e.target.classList.add("shown");
+      io.unobserve(e.target);
+    }
+  }
+}, { threshold: 0.12 });
+revealables.forEach((el) => io.observe(el));
+
+// copy buttons on code blocks
+document.querySelectorAll("pre").forEach((pre) => {
+  const btn = document.createElement("button");
+  btn.className = "copy-btn";
+  btn.textContent = "copy";
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(pre.querySelector("code")?.innerText ?? "");
+      btn.textContent = "copied :3";
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = "copy"; btn.classList.remove("copied"); }, 1600);
+    } catch { /* clipboard blocked — no drama */ }
+  });
+  pre.appendChild(btn);
+});
+
+// the little fake terminal — types out a boykisser session on scroll-into-view
+const termBody = document.getElementById("term-body");
+if (termBody) {
+  const SCRIPT = [
+    { prompt: true, text: "boykisser update" },
+    { out: true, text: ":3 creating a Timeshift snapshot first..." },
+    { out: true, text: ":3 apt: everything up to date. flatpak: 2 apps updated." },
+    { prompt: true, text: "boykisser presets music" },
+    { out: true, text: ":3 installing preset 'music'... done!" },
+    { prompt: true, text: "boykisser doctor" },
+    { out: true, text: "✅ firewall on   ✅ zram active   ✅ backups ready   💖 all purring" },
+  ];
+  const caret = termBody.querySelector(".caret");
+  let started = false;
+
+  const typeLine = (line) => new Promise((resolve) => {
+    const el = document.createElement("div");
+    el.className = "line" + (line.out ? " out" : "");
+    termBody.insertBefore(el, caret);
+    if (line.prompt) {
+      el.innerHTML = '<span class="prompt">boykisser@boykisser:~$ </span><span class="cmd"></span>';
+      const cmd = el.querySelector(".cmd");
+      let i = 0;
+      const tick = () => {
+        cmd.textContent = line.text.slice(0, ++i);
+        if (i < line.text.length) setTimeout(tick, 34 + Math.random() * 42);
+        else setTimeout(resolve, 320);
+      };
+      tick();
+    } else {
+      el.textContent = line.text;
+      setTimeout(resolve, 420);
+    }
+  });
+
+  new IntersectionObserver(async (entries, obs) => {
+    if (!entries[0].isIntersecting || started) return;
+    started = true;
+    obs.disconnect();
+    for (const line of SCRIPT) await typeLine(line);
+  }, { threshold: 0.4 }).observe(termBody);
+}
