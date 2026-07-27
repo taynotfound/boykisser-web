@@ -415,3 +415,55 @@ pre code { color: var(--ink); font-size: 0.88rem; }
   .docs-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .docs-sidebar nav { position: static; flex-direction: row; flex-wrap: wrap; }
 }
+
+/* ---------- wallpapers ---------- */
+.section-sub { color: var(--muted); margin-top: -0.4rem; }
+.walls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+.wall {
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.wall img { display: block; width: 100%; height: 160px; object-fit: cover; }
+.wall span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.35rem 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #2a0a1c;
+  background: var(--pink);
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+}
+.wall:hover { transform: translateY(-4px); border-color: var(--border-pink); box-shadow: 0 10px 30px rgba(255, 95, 162, 0.15); }
+.wall:hover span { transform: none; }
+
+/* ---------- easter egg: party mode ---------- */
+@keyframes bk-spin { to { transform: rotate(360deg); } }
+@keyframes bk-hue { to { filter: hue-rotate(360deg); } }
+body.party .hero-cat { animation: bk-spin 1.2s linear infinite; }
+body.party .hero::before, body.party .progress, body.party .btn-primary,
+body.party h1, body.party h2 { animation: bk-hue 3s linear infinite; }
+.party-toast {
+  position: fixed;
+  left: 50%; bottom: 2rem;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border-pink);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 700;
+  color: var(--pink-soft);
+  box-shadow: 0 10px 30px rgba(255, 95, 162, 0.25);
+  z-index: 200;
+}

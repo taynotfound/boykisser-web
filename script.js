@@ -87,3 +87,80 @@ document.querySelectorAll("pre").forEach((pre) => {
   });
   pre.appendChild(btn);
 });
+
+// wallpapers — served straight from the GitHub repo
+const wallsEl = document.getElementById("walls");
+if (wallsEl) {
+  const RAW = "https://raw.githubusercontent.com/taynotfound/BoykisserLinux/main/config/includes.chroot/usr/share/backgrounds/boykisser/";
+  const FALLBACK = ["boykisser1.png", "boykisser2.png", "boykisser3.jpg", "boykisser4.png", "boykisser5.jpeg", "boykisser6.jpeg"];
+
+  const render = (files) => {
+    wallsEl.innerHTML = "";
+    files.forEach((name, i) => {
+      const a = document.createElement("a");
+      a.className = "wall";
+      a.href = RAW + name;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.innerHTML = `<img loading="lazy" alt="Boykisser wallpaper ${i + 1}"><span>open full size</span>`;
+      a.querySelector("img").src = RAW + name;
+      wallsEl.appendChild(a);
+    });
+  };
+
+  (async () => {
+    try {
+      const r = await fetch("https://api.github.com/repos/taynotfound/BoykisserLinux/contents/config/includes.chroot/usr/share/backgrounds/boykisser");
+      if (!r.ok) throw new Error(r.status);
+      const list = await r.json();
+      const files = list
+        .filter((f) => f.type === "file" && /\.(png|jpe?g|webp)$/i.test(f.name))
+        .map((f) => f.name)
+        .sort();
+      render(files.length ? files : FALLBACK);
+    } catch {
+      render(FALLBACK);
+    }
+  })();
+}
+
+// easter egg — type "boykisser" anywhere (or tap the mascot 7 times) for party mode :3
+{
+  let buffer = "";
+  let taps = 0;
+  let tapTimer;
+
+  const party = () => {
+    const on = document.body.classList.toggle("party");
+    document.querySelectorAll(".party-toast").forEach((t) => t.remove());
+    if (on) {
+      const toast = document.createElement("div");
+      toast.className = "party-toast";
+      toast.textContent = "you found the secret!! party mode activated :3 💖";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 4000);
+      // a little kiss confetti burst
+      for (let i = 0; i < 24; i++) {
+        setTimeout(() => {
+          document.dispatchEvent(new MouseEvent("click", {
+            clientX: Math.random() * innerWidth,
+            clientY: Math.random() * innerHeight,
+            bubbles: true,
+          }));
+        }, i * 90);
+      }
+    }
+  };
+
+  addEventListener("keydown", (e) => {
+    if (e.target.matches("input, textarea")) return;
+    buffer = (buffer + e.key.toLowerCase()).slice(-9);
+    if (buffer === "boykisser") { buffer = ""; party(); }
+  });
+
+  document.querySelector(".hero-cat")?.addEventListener("click", () => {
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { taps = 0; }, 1500);
+    if (++taps >= 7) { taps = 0; party(); }
+  });
+}
