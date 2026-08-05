@@ -2,6 +2,8 @@
 
 Welcome to Boykisser Linux :3  -  a pink Debian 13 (trixie) spin with a fully themed XFCE desktop.
 
+![Boykisser Linux GRUB boot menu](../assets/screenshots/grub.png)
+
 ![Boykisser Linux XFCE desktop](../assets/screenshots/xfce.png)
 
 ## Grab an ISO
