@@ -2,10 +2,14 @@
 const PAGES = [
   { id: "getting-started", title: "Getting started" },
   { id: "installation", title: "Installing to disk" },
+  { id: "after-install", title: "First steps after installing" },
+  { id: "terminal-basics", title: "Terminal basics" },
+  { id: "theming", title: "Theming & customization" },
+  { id: "gaming", title: "Gaming" },
   { id: "boykisser-cli", title: "The boykisser CLI" },
   { id: "presets-and-apps", title: "Presets & apps" },
-  { id: "faq", title: "FAQ" },
   { id: "old-hardware", title: "Old hardware" },
+  { id: "faq", title: "FAQ" },
 ];
 
 const nav = document.getElementById("docs-nav");
