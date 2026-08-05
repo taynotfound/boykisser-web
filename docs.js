@@ -5,6 +5,7 @@ const PAGES = [
   { id: "boykisser-cli", title: "The boykisser CLI" },
   { id: "presets-and-apps", title: "Presets & apps" },
   { id: "faq", title: "FAQ" },
+  { id: "old-hardware", title: "Old hardware" },
 ];
 
 const nav = document.getElementById("docs-nav");
