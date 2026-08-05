@@ -254,6 +254,7 @@ h2::after {
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .shot:hover { transform: translateY(-4px); border-color: var(--border-pink); }
+.shot img { display: block; width: 100%; height: auto; }
 
 
 .shot figcaption {
