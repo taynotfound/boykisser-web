@@ -1,6 +1,7 @@
 // docs.js — renders markdown pages from docs/ into the docs shell
 const PAGES = [
   { id: "getting-started", title: "Getting started" },
+  { id: "downloading", title: "Downloading & verifying" },
   { id: "installation", title: "Installing to disk" },
   { id: "after-install", title: "First steps after installing" },
   { id: "terminal-basics", title: "Terminal basics" },
