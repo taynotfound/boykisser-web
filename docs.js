@@ -1,17 +1,17 @@
 // docs.js  -  renders markdown pages from docs/ into the docs shell
 const PAGES = [
-  { id: "getting-started", title: "Getting started" },
-  { id: "downloading", title: "Downloading & verifying" },
-  { id: "installation", title: "Installing to disk" },
-  { id: "after-install", title: "First steps after installing" },
-  { id: "terminal-basics", title: "Terminal basics" },
-  { id: "theming", title: "Theming & customization" },
-  { id: "gaming", title: "Gaming" },
-  { id: "boykisser-cli", title: "The boykisser CLI" },
-  { id: "presets-and-apps", title: "Presets & apps" },
-  { id: "boykisser-tools-install", title: "Installing boykisser-tools" },
-  { id: "old-hardware", title: "Old hardware" },
-  { id: "faq", title: "FAQ" },
+  { id: "getting-started",        title: "Getting started",            cat: "Setup" },
+  { id: "downloading",            title: "Downloading & verifying",    cat: "Setup" },
+  { id: "installation",           title: "Installing to disk",         cat: "Setup" },
+  { id: "after-install",          title: "First steps after install",  cat: "Setup" },
+  { id: "old-hardware",           title: "Old hardware",               cat: "Setup" },
+  { id: "terminal-basics",        title: "Terminal basics",            cat: "Using Boykisser" },
+  { id: "theming",                title: "Theming & customization",    cat: "Using Boykisser" },
+  { id: "gaming",                 title: "Gaming",                     cat: "Using Boykisser" },
+  { id: "presets-and-apps",       title: "Presets & apps",             cat: "Using Boykisser" },
+  { id: "boykisser-cli",          title: "The boykisser CLI",          cat: "boykisser-tools" },
+  { id: "boykisser-tools-install",title: "Installing boykisser-tools", cat: "boykisser-tools" },
+  { id: "faq",                    title: "FAQ",                        cat: "Help" },
 ];
 
 const nav = document.getElementById("docs-nav");
@@ -25,7 +25,15 @@ const currentPage = () => {
 function buildNav() {
   nav.innerHTML = "";
   const active = currentPage();
+  let lastCat = null;
   for (const p of PAGES) {
+    if (p.cat !== lastCat) {
+      const h = document.createElement("span");
+      h.className = "nav-category";
+      h.textContent = p.cat;
+      nav.appendChild(h);
+      lastCat = p.cat;
+    }
     const a = document.createElement("a");
     a.href = `#/${p.id}`;
     a.textContent = p.title;

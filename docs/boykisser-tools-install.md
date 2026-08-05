@@ -5,6 +5,8 @@ separate repo: [boykisser-tools](https://github.com/taynotfound/boykisser-tools)
 They get baked into the ISO automatically at build time, but you can also
 install or update them manually on any Debian-based system.
 
+![boykisser-center](../boykisser-center.png)
+
 ---
 
 ## Full install
