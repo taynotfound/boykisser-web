@@ -222,13 +222,21 @@
   <p class="get-note">
     Every release links a <strong>direct mirror</strong> and a <strong>torrent</strong> on
     the Internet Archive - one whole ISO, no zip parts to glue back together.
-    There are two flavours: the <strong>full ISO</strong> (everything offline) and a slim
-    <strong>netinstall ISO</strong> that downloads the heavy apps on first boot.
+    Three flavours: the <strong>full ISO</strong> (everything offline), a slim
+    <strong>netinstall ISO</strong> that downloads the heavy apps on first boot,
+    and a <strong>lite ISO</strong> for ancient BIOS laptops that choke on the hybrid image.
   </p>
   <div class="cta" id="flavour-links" hidden>
     <a class="btn btn-primary" id="dl-full" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Full ISO</a>
     <a class="btn" id="dl-netinstall" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Netinstall ISO</a>
+    <a class="btn" id="dl-lite" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Lite ISO (old laptops)</a>
   </div>
+  <p class="get-note" style="margin-top:1rem">
+    On a pre-2010 laptop and the full/netinstall ISO drops you at a <code>grub&gt;</code>
+    prompt? Grab the <strong>lite ISO</strong>. It's built BIOS-only (syslinux, no grub-efi
+    hybrid) with <code>nomodeset</code> in the default boot line — <code>dd</code> it to a
+    USB and it boots. No Ventoy, no chainloading, no OpenCore.
+  </p>
   <ol class="steps">
     <li>
       Open the <a href="https://github.com/taynotfound/BoykisserLinux/releases/latest">latest

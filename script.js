@@ -14,12 +14,14 @@
     // direct mirror links for both flavours, parsed from the release notes
     const body = rel.body || "";
     const isoUrls = body.match(/https:\/\/archive\.org\/download\/\S+\.iso/g) || [];
-    const full = isoUrls.find(u => !u.includes("netinstall"));
+    const full = isoUrls.find(u => !u.includes("netinstall") && !u.includes("lite"));
     const net = isoUrls.find(u => u.includes("netinstall"));
+    const lite = isoUrls.find(u => u.includes("lite"));
     const wrap = document.getElementById("flavour-links");
-    if (wrap && (full || net)) {
+    if (wrap && (full || net || lite)) {
       if (full) document.getElementById("dl-full").href = full;
       if (net) document.getElementById("dl-netinstall").href = net;
+      if (lite) document.getElementById("dl-lite").href = lite;
       wrap.hidden = false;
     }
   } catch { /* offline or rate-limited — the static link still works */ }
