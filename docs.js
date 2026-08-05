@@ -9,6 +9,7 @@ const PAGES = [
   { id: "gaming", title: "Gaming" },
   { id: "boykisser-cli", title: "The boykisser CLI" },
   { id: "presets-and-apps", title: "Presets & apps" },
+  { id: "boykisser-tools-install", title: "Installing boykisser-tools" },
   { id: "old-hardware", title: "Old hardware" },
   { id: "faq", title: "FAQ" },
 ];
