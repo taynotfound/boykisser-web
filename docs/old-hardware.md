@@ -16,11 +16,10 @@ Grab it from the [latest release](https://github.com/taynotfound/BoykisserLinux/
 ## Flashing it
 
 ```sh
-# double-check /dev/sdX is your USB first
 sudo dd if=boykisser-linux-lite-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
-No Ventoy, no Rufus multiboot — just `dd` straight to the USB. Ventoy adds its own bootloader chain that old firmware can reject.
+No Ventoy — `dd` straight to USB. Ventoy's own bootloader chain is what old firmware rejects.
 
 ## BIOS settings
 
