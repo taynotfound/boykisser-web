@@ -99,14 +99,15 @@
   </nav>
 
   <div class="hero-inner" id="top">
-    <img class="hero-cat" src="assets/boykisser.png" alt="The Boykisser mascot" width="240">
+    <img class="hero-cat" src="assets/boykisser.png" alt="The Boykisser mascot" width="260">
     <h1>Boykisser&nbsp;Linux <span class="uwu">:3</span></h1>
-    <p class="tagline">A pink Debian spin I actually run on my own machine.<br>XFCE underneath, Boykisser all the way up.</p>
+    <p class="tagline">A pink Debian spin I actually daily drive.</p>
+    <p class="tagline-sub">XFCE underneath, Boykisser all the way up.</p>
     <div class="cta">
       <a class="btn btn-primary" id="download-btn" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Download the latest build</a>
       <a class="btn" href="https://github.com/taynotfound/BoykisserLinux">Source</a>
       <a class="btn btn-discord" href="https://discord.gg/3ZpwE9PPfP">Discord</a>
-      <a class="btn btn-kofi" href="https://ko-fi.com/taygotkofi">Buy me a Ko-fi ☕</a>
+      <a class="btn btn-kofi" href="https://ko-fi.com/taygotkofi">Ko-fi ☕</a>
     </div>
     <p class="subtle">Debian&nbsp;13 (trixie) · amd64 · boots on UEFI and old BIOS boxes <span id="release-info"></span></p>
   </div>
@@ -114,56 +115,81 @@
 
 <main>
 
-<section id="what" class="section lede">
+<section id="what" class="section lede reveal">
   <p>
     It's Debian 13 with XFCE, themed pink from the boot menu all the way to the login
     screen. Flatpak and Flathub are already set up before you ever log in, Steam and OBS
     work, and there's a normal one-button installer when you're ready to keep it.
-    Prefer KDE Plasma? The installer lets you pick it  -  and it can pull in optional app
+  </p>
+  <p>
+    Prefer KDE Plasma? The installer lets you pick it - and it can pull in optional app
     bundles for gaming, streaming, development or office work while it's at it.
   </p>
   <p>
-    I made it because I wanted a daily driver that looked like - me -  and didn't
-    get in my way. It's a hobby project by one person, so there's the odd rough edge -
-    but it's plain Debian under the paint, nothing cursed.
+    I made it because I wanted a daily driver that looked like me and didn't
+    get in my way. Hobby project, one person, the odd rough edge - but it's plain
+    Debian under the paint, nothing cursed.
   </p>
 </section>
 
-<section id="shots" class="section">
-  <h2>What it looks like</h2>
+<section id="shots" class="section reveal">
+  <div class="section-title-wrap">
+    <h2>What it looks like</h2>
+  </div>
   <div class="shots">
     <figure class="shot">
-      <a href="assets/screenshots/xfce.png"><img src="assets/screenshots/xfce.png" alt="Boykisser Linux XFCE desktop  -  pink themed panel, Whisker menu and Boykisser wallpaper" loading="lazy"></a>
-      <figcaption>XFCE  -  the default desktop, straight off the live ISO</figcaption>
+      <div class="shot-frame">
+        <a href="assets/screenshots/xfce.png">
+          <img src="assets/screenshots/xfce.png" alt="Boykisser Linux XFCE desktop - pink themed panel, Whisker menu and Boykisser wallpaper" loading="lazy">
+        </a>
+      </div>
+      <figcaption>XFCE - the default desktop, straight off the live ISO</figcaption>
     </figure>
     <figure class="shot">
-      <a href="assets/screenshots/kde.png"><img src="assets/screenshots/kde.png" alt="Boykisser Linux KDE Plasma desktop  -  pink accent, Tela-circle icons and Boykisser wallpaper" loading="lazy"></a>
-      <figcaption>KDE Plasma  -  pick it in the installer, same pink treatment</figcaption>
+      <div class="shot-frame">
+        <a href="assets/screenshots/kde.png">
+          <img src="assets/screenshots/kde.png" alt="Boykisser Linux KDE Plasma desktop - pink accent, Tela-circle icons and Boykisser wallpaper" loading="lazy">
+        </a>
+      </div>
+      <figcaption>KDE Plasma - pick it in the installer, same pink treatment</figcaption>
+    </figure>
+    <figure class="shot">
+      <div class="shot-frame">
+        <a href="assets/screenshots/boykisser-center.png">
+          <img src="assets/screenshots/boykisser-center.png" alt="Boykisser Center - system hub for updates, themes and apps" loading="lazy">
+        </a>
+      </div>
+      <figcaption>Boykisser Center - one hub for updates, themes, apps</figcaption>
     </figure>
   </div>
 </section>
 
-<section id="wallpapers" class="section alt">
-  <h2>The wallpapers</h2>
-  <p class="section-sub">All six ship with the ISO (<code>boykisser wallpaper</code> cycles them)  -  served straight from the repo, so they're always the current set.</p>
-  <div class="walls" id="walls"></div>
+<section id="wallpapers" class="section alt reveal">
+  <div class="section-title-wrap" style="max-width:760px;margin:0 auto 0">
+    <h2>The wallpapers</h2>
+  </div>
+  <p class="section-sub" style="max-width:760px;margin:0 auto 0.5rem">All six ship with the ISO (<code>boykisser wallpaper</code> cycles them) - served straight from the repo, so they're always the current set.</p>
+  <div class="walls" id="walls" style="max-width:1080px;margin:1.2rem auto 0"></div>
 </section>
 
-<section id="inside" class="section">
-  <h2>What's already set up</h2>
+<section id="inside" class="section reveal">
+  <div class="section-title-wrap">
+    <h2>What's already set up</h2>
+  </div>
   <div class="features">
     <div class="feature">
+      <span class="feature-deco">🎨</span>
       <h3>The whole pink look</h3>
       <p>
         Themed XFCE with Tela-circle icons, a Boykisser start button, custom Plymouth
-        splash and a matching GRUB menu. There's a single toggle that flips the desktop
-        between light and dark.
+        splash and a matching GRUB menu. One toggle flips the desktop between light and dark.
       </p>
     </div>
     <div class="feature">
+      <span class="feature-deco">🕹️</span>
       <h3>Games run</h3>
       <p>
-        Steam, Heroic, GameMode and MangoHud are in the image, with 32-bit libraries
+        Steam, Heroic, GameMode and MangoHud in the image, with 32-bit libraries
         turned on so your library actually launches instead of sulking.
       </p>
     </div>
@@ -178,24 +204,21 @@
       <h3>Hardware, broadly</h3>
       <p>
         Wide firmware coverage and Nouveau by default so it boots more or less anywhere.
-        Got an NVIDIA card? There's a one-click helper to pull the proprietary driver
-        once you've installed.
+        NVIDIA card? One-click helper pulls the proprietary driver post-install.
       </p>
     </div>
     <div class="feature">
-      <h3>The Boykisser center</h3>
+      <h3>Boykisser Center</h3>
       <p>
-        One friendly hub for everything: system updates with automatic Timeshift
-        snapshots, app presets, a browser chooser, a de-bloat picker, NVIDIA drivers,
-        newer kernels from backports and a built-in bug reporter.
+        One hub for everything: updates with Timeshift snapshots, app presets, browser chooser,
+        de-bloat picker, NVIDIA drivers, newer kernels and a built-in bug reporter.
       </p>
     </div>
     <div class="feature">
       <h3>Sensible defaults</h3>
       <p>
-        Firewall on, automatic security updates, zram swap, night light, weekly SSD
-        TRIM, printing and firmware updates  -  all preconfigured. The live boot menu
-        even speaks seven languages.
+        Firewall on, automatic security updates, zram swap, night light, weekly SSD TRIM,
+        printing and firmware updates - all preconfigured. Boot menu speaks seven languages.
       </p>
     </div>
   </div>
@@ -209,7 +232,7 @@
     <li>GParted</li>
     <li>Thunar</li>
   </ul>
-  <p class="apps-intro">…and these land on first boot via Flatpak:</p>
+  <p class="apps-intro">...and these land on first boot via Flatpak:</p>
   <ul class="apps">
     <li>Discord</li>
     <li>Flatseal</li>
@@ -217,10 +240,12 @@
   </ul>
 </section>
 
-<section id="get" class="section alt">
-  <h2>Get it</h2>
+<section id="get" class="section alt reveal">
+  <div class="section-title-wrap" style="max-width:760px;margin:0 auto 0">
+    <h2>Get it</h2>
+  </div>
   <p class="get-note">
-    Three flavours: <strong>Full</strong> (everything offline), <strong>Netinstall</strong> (slim, downloads heavy apps on first boot), <strong>Lite</strong> (ancient BIOS laptops  -  no grub-efi hybrid, <code>nomodeset</code> default).
+    Three flavours: <strong>Full</strong> (everything offline), <strong>Netinstall</strong> (slim, downloads heavy apps on first boot), <strong>Lite</strong> (ancient BIOS laptops - no grub-efi hybrid, <code>nomodeset</code> default).
     Every release has a direct mirror + torrent on the Internet Archive.
   </p>
   <div class="cta" id="flavour-links" hidden>
@@ -229,24 +254,21 @@
     <a class="btn" id="dl-lite" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Lite ISO</a>
   </div>
   <p class="get-note" style="margin-top:1rem">
-    Flash with <code>dd</code>, boot, run the installer. Need help? <a href="docs.html#old-hardware">Old hardware guide →</a>
-  </p>
-</section>
-
-<section id="honest" class="section heads-up">
-  <h2>Before you flame me</h2>
-  <p>
-    This is a one-person hobby distro, and I leaned on AI a fair bit while building it -
-    the repo even has a <code>README.sh</code> that says so out loud. It's not affiliated
-    with Debian, and things will occasionally be janky. If something breaks or you just
-    want to say hi, the <a href="https://discord.gg/3ZpwE9PPfP">Discord</a> is the place.
+    Flash with <code>dd</code>, boot, run the installer. Need help? <a href="docs.html#old-hardware">Old hardware guide -&gt;</a>
   </p>
 </section>
 
 </main>
 
+<div class="disclaimer-bar">
+  One-person hobby distro. I leaned on AI a fair bit building it - the repo has a <code>README.sh</code> that says so.
+  Not affiliated with Debian. Things will occasionally be janky.
+  Questions or bug reports: <a href="https://discord.gg/3ZpwE9PPfP">Discord</a>.
+</div>
+
 <footer class="footer">
-  <img src="assets/favicon.png" alt="" width="40" height="40">
+  <div class="footer-ascii">:3</div>
+  <img src="assets/favicon.png" alt="" width="32" height="32">
   <p>Boykisser Linux - put together by <a href="https://taymaerz.de">Tay Maerz</a></p>
   <div class="footer-links">
     <a href="https://github.com/taynotfound/BoykisserLinux">GitHub</a>
