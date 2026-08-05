@@ -144,3 +144,11 @@ These are sandboxed, so controller and audio access is slightly different  -  bu
 ---
 
 That's it. Steam + Proton covers the vast majority of your library. Lutris handles the gaps. MangoHud + GameMode for when you want to optimize. Go play something.
+
+---
+
+## See also
+
+- [Presets & apps](#presets-and-apps)
+- [First steps after install](#after-install)
+- [Terminal basics](#terminal-basics)

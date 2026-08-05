@@ -33,3 +33,12 @@ Then it copies everything over  -  a few minutes  -  and asks to reboot.
 ## Netinstall notes
 
 The netinstall ISO needs a working internet connection during install (ethernet is easiest). Everything else is identical.
+
+---
+
+## See also
+
+- [Getting started](#getting-started)
+- [First steps after install](#after-install)
+- [Old hardware](#old-hardware)
+- [FAQ](#faq)

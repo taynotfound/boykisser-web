@@ -94,3 +94,11 @@ sudo apt-get remove boykisser-tools boykisser-core boykisser-center \
   boykisser-update boykisser-doctor boykisser-nvidia boykisser-theme \
   boykisser-apps boykisser-system
 ```
+
+---
+
+## See also
+
+- [The boykisser CLI](#boykisser-cli)
+- [First steps after install](#after-install)
+- [Presets & apps](#presets-and-apps)

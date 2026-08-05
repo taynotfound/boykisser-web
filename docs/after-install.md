@@ -156,3 +156,12 @@ Search "Software" in the app menu. It's a GUI wrapper over both  -  fine for bro
 That's the basics covered. You've got a updated system, working drivers, backups configured, and apps ready to install. You're good to go.
 
 If anything feels broken, `boykisser doctor` is your first call.
+
+---
+
+## See also
+
+- [Terminal basics](#terminal-basics)
+- [Theming & customization](#theming)
+- [Presets & apps](#presets-and-apps)
+- [The boykisser CLI](#boykisser-cli)

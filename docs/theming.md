@@ -4,6 +4,9 @@ Boykisser Linux ships pink. Bright, unapologetic, deeply pink. You *can* change 
 
 That said, here's how to make it yours.
 
+
+![Boykisser Linux KDE desktop](../assets/screenshots/kde.png)
+
 ---
 
 ## Quick toggles
@@ -185,3 +188,11 @@ Restores the default Boykisser theme. Clean slate.
 ---
 
 One last thing: you *can* make this look like Windows. Or macOS. Or like it's 2003 again. Linux has been doing this for decades. But none of those distros ship with a kissing cat mascot, so consider that before you paint over it.
+
+---
+
+## See also
+
+- [First steps after install](#after-install)
+- [Presets & apps](#presets-and-apps)
+- [The boykisser CLI](#boykisser-cli)

@@ -2,6 +2,8 @@
 
 Welcome to Boykisser Linux :3  -  a pink Debian 13 (trixie) spin with a fully themed XFCE desktop.
 
+![Boykisser Linux XFCE desktop](../assets/screenshots/xfce.png)
+
 ## Grab an ISO
 
 There are three flavours on the [releases page](https://github.com/taynotfound/BoykisserLinux/releases/latest):
@@ -55,3 +57,11 @@ sudo calamares
 ```
 
 The installer walks you through partitioning, locale, and user setup. A typical install takes about 10–15 minutes.
+
+---
+
+## See also
+
+- [Downloading & verifying](#downloading)
+- [Installing to disk](#installation)
+- [First steps after install](#after-install)

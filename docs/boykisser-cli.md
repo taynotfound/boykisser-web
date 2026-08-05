@@ -2,6 +2,8 @@
 
 Everything the distro can do is wrapped in one friendly command: `boykisser`. Most of these also live as buttons in the **Boykisser Center** GUI.
 
+![boykisser CLI help output](../assets/screenshots/terminal.png)
+
 ```bash
 boykisser <command>
 ```
@@ -45,3 +47,11 @@ boykisser update
 boykisser presets
 boykisser browser
 ```
+
+---
+
+## See also
+
+- [Installing boykisser-tools](#boykisser-tools-install)
+- [Presets & apps](#presets-and-apps)
+- [First steps after install](#after-install)

@@ -233,3 +233,11 @@ You now know enough to not break anything accidentally. The only genuinely dange
 The terminal feels weird for about a week, then it starts feeling faster than the GUI for a lot of things. Tab completion and history alone will change how you work.
 
 When something goes wrong  -  and it will, for everyone  -  the error message usually tells you exactly what happened. Read it. Google the relevant part. That's the whole skill.
+
+---
+
+## See also
+
+- [The boykisser CLI](#boykisser-cli)
+- [First steps after install](#after-install)
+- [FAQ](#faq)

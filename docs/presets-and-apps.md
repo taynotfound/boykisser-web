@@ -42,3 +42,12 @@ It only offers groups that are actually installed  -  gaming, OBS, VLC, VS Code,
 ## Anything else
 
 It's plain Debian underneath, so `apt`, `flatpak`, GNOME Software-style stores, whatever you like  -  all work exactly as expected.
+
+---
+
+## See also
+
+- [The boykisser CLI](#boykisser-cli)
+- [Gaming](#gaming)
+- [Theming & customization](#theming)
+- [First steps after install](#after-install)

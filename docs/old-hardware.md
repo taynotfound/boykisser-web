@@ -133,3 +133,12 @@ sudo reboot
 This gives you a plain Debian trixie + Xfce base. It won't have Boykisser theming or tooling out of the box, but it runs and you can customise from there.
 
 </details>
+
+---
+
+## See also
+
+- [Getting started](#getting-started)
+- [Downloading & verifying](#downloading)
+- [Installing to disk](#installation)
+- [FAQ](#faq)
