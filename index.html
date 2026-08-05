@@ -218,42 +218,19 @@
 </section>
 
 <section id="get" class="section alt">
-  <h2>Getting it onto a stick</h2>
+  <h2>Get it</h2>
   <p class="get-note">
-    Every release links a <strong>direct mirror</strong> and a <strong>torrent</strong> on
-    the Internet Archive - one whole ISO, no zip parts to glue back together.
-    Three flavours: the <strong>full ISO</strong> (everything offline), a slim
-    <strong>netinstall ISO</strong> that downloads the heavy apps on first boot,
-    and a <strong>lite ISO</strong> for ancient BIOS laptops that choke on the hybrid image.
+    Three flavours: <strong>Full</strong> (everything offline), <strong>Netinstall</strong> (slim, downloads heavy apps on first boot), <strong>Lite</strong> (ancient BIOS laptops — no grub-efi hybrid, <code>nomodeset</code> default).
+    Every release has a direct mirror + torrent on the Internet Archive.
   </p>
   <div class="cta" id="flavour-links" hidden>
     <a class="btn btn-primary" id="dl-full" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Full ISO</a>
     <a class="btn" id="dl-netinstall" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Netinstall ISO</a>
-    <a class="btn" id="dl-lite" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Lite ISO (old laptops)</a>
+    <a class="btn" id="dl-lite" href="https://github.com/taynotfound/BoykisserLinux/releases/latest">Lite ISO</a>
   </div>
   <p class="get-note" style="margin-top:1rem">
-    On a pre-2010 laptop and the full/netinstall ISO drops you at a <code>grub&gt;</code>
-    prompt? Grab the <strong>lite ISO</strong>. It's built BIOS-only (syslinux, no grub-efi
-    hybrid) with <code>nomodeset</code> in the default boot line — <code>dd</code> it to a
-    USB and it boots. No Ventoy, no chainloading, no OpenCore.
+    Flash with <code>dd</code>, boot, run the installer. Need help? <a href="docs.html#old-hardware">Old hardware guide →</a>
   </p>
-  <ol class="steps">
-    <li>
-      Open the <a href="https://github.com/taynotfound/BoykisserLinux/releases/latest">latest
-      release</a> and grab <code>boykisser-linux-amd64.iso</code> from the mirror or torrent.
-    </li>
-    <li>
-      Check it matches (the release ships <code>SHA256SUMS</code>):
-      <pre><code>sha256sum -c SHA256SUMS</code></pre>
-    </li>
-    <li>
-      Write it to a USB stick - <strong>double-check the drive letter</strong>, this wipes it:
-      <pre><code>sudo dd if=boykisser-linux-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync</code></pre>
-    </li>
-    <li>Boot it and poke around the live desktop. If it ever asks you to log in,
-      the live user is <code>boykisser</code> with password <code>live</code>.</li>
-    <li>Run <strong>Install Boykisser Linux</strong> when you're happy.</li>
-  </ol>
 </section>
 
 <section id="honest" class="section heads-up">
