@@ -1,4 +1,4 @@
-# Boykisser Linux — website
+# Boykisser Linux  -  website
 
 The landing page for [Boykisser Linux](https://github.com/taynotfound/BoykisserLinux),
 served at **[boykisser.taymaerz.de](https://boykisser.taymaerz.de)**.

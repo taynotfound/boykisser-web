@@ -42,7 +42,7 @@ body {
 a { color: var(--pink-soft); text-decoration: none; }
 a:hover { color: #fff; }
 
-/* faint paw-dot texture — the one bit of fluff we keep */
+/* faint paw-dot texture  -  the one bit of fluff we keep */
 .paws {
   position: fixed;
   inset: 0;

@@ -24,7 +24,7 @@
       if (lite) document.getElementById("dl-lite").href = lite;
       wrap.hidden = false;
     }
-  } catch { /* offline or rate-limited — the static link still works */ }
+  } catch { /* offline or rate-limited  -  the static link still works */ }
 })();
 
 // click anywhere, leave a little trail of kisses
@@ -85,12 +85,12 @@ document.querySelectorAll("pre").forEach((pre) => {
       btn.textContent = "copied :3";
       btn.classList.add("copied");
       setTimeout(() => { btn.textContent = "copy"; btn.classList.remove("copied"); }, 1600);
-    } catch { /* clipboard blocked — no drama */ }
+    } catch { /* clipboard blocked  -  no drama */ }
   });
   pre.appendChild(btn);
 });
 
-// wallpapers — served straight from the GitHub repo
+// wallpapers  -  served straight from the GitHub repo
 const wallsEl = document.getElementById("walls");
 if (wallsEl) {
   const RAW = "https://raw.githubusercontent.com/taynotfound/BoykisserLinux/main/config/includes.chroot/usr/share/backgrounds/boykisser/";
@@ -126,7 +126,7 @@ if (wallsEl) {
   })();
 }
 
-// easter egg — type "boykisser" anywhere (or tap the mascot 7 times) for party mode :3
+// easter egg  -  type "boykisser" anywhere (or tap the mascot 7 times) for party mode :3
 {
   let buffer = "";
   let taps = 0;

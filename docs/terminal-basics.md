@@ -2,13 +2,13 @@
 
 The terminal is just a text box where you tell your computer what to do by typing. That's it. It's not magic, it's not dangerous (mostly), and it's genuinely faster than clicking around once you know a few commands.
 
-This page covers everything you need to get comfortable. You don't need to memorize it — just come back when you need something.
+This page covers everything you need to get comfortable. You don't need to memorize it  -  just come back when you need something.
 
 ---
 
 ## Opening a terminal
 
-Press **Ctrl+Alt+T** — that's the shortcut. Or look for **Terminal** or **Xfce Terminal** in the app menu.
+Press **Ctrl+Alt+T**  -  that's the shortcut. Or look for **Terminal** or **Xfce Terminal** in the app menu.
 
 You'll see something like:
 
@@ -29,7 +29,7 @@ Boykisser uses **fish** as the default shell. Fish is beginner-friendly in ways 
 - **Command history**: press the Up arrow to go back through previous commands. Start typing and press Up to find matching commands from history.
 - **Suggestions**: fish shows a greyed-out suggestion as you type based on your history. Press the Right arrow to accept it.
 
-These aren't gimmicks — they'll save you from typos daily.
+These aren't gimmicks  -  they'll save you from typos daily.
 
 ---
 
@@ -67,7 +67,7 @@ cd Documents
 - `~` to jump straight home: `cd ~`
 - A full path: `cd /etc/apt`
 
-Tab completion works great here — type `cd Doc` and press Tab.
+Tab completion works great here  -  type `cd Doc` and press Tab.
 
 ### Make a new folder
 
@@ -119,7 +119,7 @@ rm file.txt
 cat file.txt
 ```
 
-Good for short files. For long files it'll just scroll past — use `less` instead.
+Good for short files. For long files it'll just scroll past  -  use `less` instead.
 
 ### Read a file one page at a time
 
@@ -171,7 +171,7 @@ sudo apt purge vlc
 boykisser update
 ```
 
-This is the Boykisser way — it handles the full update cycle cleanly. Under the hood it's running `apt update` then `apt full-upgrade`. Run it every week or so.
+This is the Boykisser way  -  it handles the full update cycle cleanly. Under the hood it's running `apt update` then `apt full-upgrade`. Run it every week or so.
 
 If you want to run it manually the old-fashioned way:
 
@@ -181,17 +181,17 @@ sudo apt update && sudo apt upgrade
 
 ---
 
-## sudo — why it exists
+## sudo  -  why it exists
 
-Some commands need extra permissions to run — installing software, editing system files, starting services. `sudo` (pronounced "sue-doo" or "soo-doo", the debate is eternal) temporarily gives you admin powers for one command.
+Some commands need extra permissions to run  -  installing software, editing system files, starting services. `sudo` (pronounced "sue-doo" or "soo-doo", the debate is eternal) temporarily gives you admin powers for one command.
 
 ```bash
 sudo apt install gimp
 ```
 
-It'll ask for your password the first time. You won't see the characters as you type — that's normal, it's a security feature.
+It'll ask for your password the first time. You won't see the characters as you type  -  that's normal, it's a security feature.
 
-> **Why not just be admin all the time?** Because mistakes are permanent. If you're always running as root and you accidentally delete something, it's gone. `sudo` means you have to *intentionally* run something with power — it forces a pause. It's a seatbelt.
+> **Why not just be admin all the time?** Because mistakes are permanent. If you're always running as root and you accidentally delete something, it's gone. `sudo` means you have to *intentionally* run something with power  -  it forces a pause. It's a seatbelt.
 
 Don't run random `sudo` commands you found on the internet unless you understand what they do.
 
@@ -232,4 +232,4 @@ You now know enough to not break anything accidentally. The only genuinely dange
 
 The terminal feels weird for about a week, then it starts feeling faster than the GUI for a lot of things. Tab completion and history alone will change how you work.
 
-When something goes wrong — and it will, for everyone — the error message usually tells you exactly what happened. Read it. Google the relevant part. That's the whole skill.
+When something goes wrong  -  and it will, for everyone  -  the error message usually tells you exactly what happened. Read it. Google the relevant part. That's the whole skill.

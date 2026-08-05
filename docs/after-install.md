@@ -12,7 +12,7 @@ Before anything else, pull in the latest packages. This fixes bugs, patches secu
 boykisser update
 ```
 
-This runs a full system update under the hood (`apt update && apt full-upgrade`) plus refreshes any Boykisser-specific configs. Do this before you install anything else — you want a fresh base.
+This runs a full system update under the hood (`apt update && apt full-upgrade`) plus refreshes any Boykisser-specific configs. Do this before you install anything else  -  you want a fresh base.
 
 ---
 
@@ -73,7 +73,7 @@ Bluetooth is installed and the service is running. To connect a device:
 1. Click the Bluetooth icon in the system tray
 2. Turn on Bluetooth if it's off
 3. Put your device in pairing mode
-4. It should show up — click it, confirm the PIN if asked
+4. It should show up  -  click it, confirm the PIN if asked
 
 For headphones, once paired they reconnect automatically. If audio doesn't switch over when you connect, right-click the volume icon → **Audio Mixer** → set your output device.
 
@@ -90,7 +90,7 @@ CUPS (the Linux printing system) is already installed and configured. To add you
 
 1. Open a browser and go to: `http://localhost:631`
 2. Click **Administration** → **Add Printer**
-3. Follow the steps — most modern printers are detected automatically
+3. Follow the steps  -  most modern printers are detected automatically
 
 Or use the GUI: search "Printers" in the app menu.
 
@@ -102,7 +102,7 @@ If your printer is on the network (WiFi or Ethernet), it'll usually show up auto
 
 ## 7. Set up Timeshift (backups)
 
-Timeshift takes snapshots of your system so you can roll back if something breaks. This is not optional — set it up now, thank yourself later.
+Timeshift takes snapshots of your system so you can roll back if something breaks. This is not optional  -  set it up now, thank yourself later.
 
 ```bash
 timeshift-gtk
@@ -110,7 +110,7 @@ timeshift-gtk
 
 First run will ask you to configure it:
 - **Snapshot type**: RSYNC (works everywhere, recommended)
-- **Snapshot location**: pick a drive with space — ideally not your main drive, but internal is fine
+- **Snapshot location**: pick a drive with space  -  ideally not your main drive, but internal is fine
 - **Schedule**: Weekly is a good default
 
 Once configured, Timeshift runs automatically. If you ever do something catastrophic (yes, it happens to everyone), you just boot from a live USB, open Timeshift, and restore.
@@ -119,7 +119,7 @@ Once configured, Timeshift runs automatically. If you ever do something catastro
 
 ## 8. Flatpak is already set up
 
-Flatpak is ready to go — Flathub is configured as a source. You can install apps directly from [flathub.org](https://flathub.org) or from the terminal:
+Flatpak is ready to go  -  Flathub is configured as a source. You can install apps directly from [flathub.org](https://flathub.org) or from the terminal:
 
 ```bash
 flatpak install flathub com.spotify.Client
@@ -147,7 +147,7 @@ flatpak install flathub org.mozilla.firefox
 Best for desktop apps where you want a newer version or sandboxing.
 
 **Via the software center:**
-Search "Software" in the app menu. It's a GUI wrapper over both — fine for browsing, slower than the terminal.
+Search "Software" in the app menu. It's a GUI wrapper over both  -  fine for browsing, slower than the terminal.
 
 > When in doubt, try apt first. If it's not there or the version is too old, try Flatpak.
 

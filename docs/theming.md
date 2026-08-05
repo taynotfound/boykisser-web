@@ -1,6 +1,6 @@
 # Theming & customization
 
-Boykisser Linux ships pink. Bright, unapologetic, deeply pink. You *can* change it — this is Linux, you can change literally everything — but consider why you would.
+Boykisser Linux ships pink. Bright, unapologetic, deeply pink. You *can* change it  -  this is Linux, you can change literally everything  -  but consider why you would.
 
 That said, here's how to make it yours.
 
@@ -29,7 +29,7 @@ Cycles through the 6 wallpapers that ship with the ISO:
 | `kisser-default` | The classic. Pink gradient, mascot in the corner |
 | `kisser-night` | Dark purple/pink, stars |
 | `kisser-minimal` | Solid blush pink, no mascot (for the tasteful) |
-| `kisser-forest` | Green with pink accents — the most chaotic option |
+| `kisser-forest` | Green with pink accents  -  the most chaotic option |
 | `kisser-city` | Lo-fi city skyline, pink sunset |
 | `kisser-abstract` | Geometric, very 2024 |
 
@@ -41,7 +41,7 @@ You can also right-click the desktop → **Desktop Settings** → pick any image
 
 Boykisser ships with its own GTK theme. To try others:
 
-1. Install a theme — [gnome-look.org](https://www.gnome-look.org/browse?cat=135) is the main source, or:
+1. Install a theme  -  [gnome-look.org](https://www.gnome-look.org/browse?cat=135) is the main source, or:
    ```bash
    sudo apt install arc-theme materia-gtk-theme
    ```
@@ -91,7 +91,7 @@ To theme it, drop a theme folder into `~/.local/share/plank/themes/`. [pling.com
 ---
 
 <details>
-<summary>⚙️ Kvantum — theming Qt apps (advanced)</summary>
+<summary>⚙️ Kvantum  -  theming Qt apps (advanced)</summary>
 
 Some apps (like VLC, qBittorrent, KDE apps) use Qt instead of GTK. GTK themes don't affect them, so they can look out of place. Kvantum fixes that.
 
@@ -114,14 +114,14 @@ echo "QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 Log out and back in. Qt apps will now use the Kvantum theme.
 
-For a matching look, the Kvantum theme that goes with Materia GTK is called `Materia`, and for Arc it's `Arc`. Most popular GTK themes have a matching Kvantum variant — search the theme name + "kvantum" on gnome-look.
+For a matching look, the Kvantum theme that goes with Materia GTK is called `Materia`, and for Arc it's `Arc`. Most popular GTK themes have a matching Kvantum variant  -  search the theme name + "kvantum" on gnome-look.
 
 </details>
 
 <details>
-<summary>⚙️ Conky — desktop info overlay (advanced)</summary>
+<summary>⚙️ Conky  -  desktop info overlay (advanced)</summary>
 
-Conky draws system stats directly on the desktop. CPU usage, RAM, disk, network, time — all floating on your wallpaper like a hacker movie prop.
+Conky draws system stats directly on the desktop. CPU usage, RAM, disk, network, time  -  all floating on your wallpaper like a hacker movie prop.
 
 **Install:**
 ```bash
@@ -161,7 +161,7 @@ Disk: ${fs_used /} / ${fs_size /}
 
 To autostart: **Session and Startup** → **Application Autostart** → add `conky`.
 
-There are hundreds of pre-made conky configs on [deviantart.com](https://www.deviantart.com/search?q=conky+config) and [pling.com](https://www.pling.com). Most are just a config file — drop it in `~/.config/conky/conky.conf` and restart conky.
+There are hundreds of pre-made conky configs on [deviantart.com](https://www.deviantart.com/search?q=conky+config) and [pling.com](https://www.pling.com). Most are just a config file  -  drop it in `~/.config/conky/conky.conf` and restart conky.
 
 </details>
 
@@ -173,7 +173,7 @@ Two valid paths:
 
 **Just tweaking (recommended):** Run `boykisser theme` to switch light/dark, swap the wallpaper, maybe change the icon pack. Takes 5 minutes, looks great, you keep the stuff that already works.
 
-**Going full custom:** Replace the GTK theme, set up Kvantum for Qt, configure Plank, get a conky overlay, change the panel layout, custom fonts. Takes an afternoon. Looks exactly how you want. Nothing will break as long as you're just changing themes — these are all cosmetic, not system-level changes.
+**Going full custom:** Replace the GTK theme, set up Kvantum for Qt, configure Plank, get a conky overlay, change the panel layout, custom fonts. Takes an afternoon. Looks exactly how you want. Nothing will break as long as you're just changing themes  -  these are all cosmetic, not system-level changes.
 
 Either way, if you somehow make it look worse and want to go back:
 ```bash

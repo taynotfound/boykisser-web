@@ -1,4 +1,4 @@
-// docs.js — renders markdown pages from docs/ into the docs shell
+// docs.js  -  renders markdown pages from docs/ into the docs shell
 const PAGES = [
   { id: "getting-started", title: "Getting started" },
   { id: "downloading", title: "Downloading & verifying" },
@@ -59,7 +59,7 @@ async function loadPage() {
     });
     scrollTo(0, 0);
   } catch {
-    content.innerHTML = "<p>Couldn't load that page :( — try the <a href='#/getting-started'>getting started</a> guide.</p>";
+    content.innerHTML = "<p>Couldn't load that page :(  -  try the <a href='#/getting-started'>getting started</a> guide.</p>";
   }
 }
 

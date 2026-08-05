@@ -1,6 +1,6 @@
 # Installing to disk
 
-Boykisser Linux uses the [Calamares](https://calamares.io/) installer — the same friendly one many distros use.
+Boykisser Linux uses the [Calamares](https://calamares.io/) installer  -  the same friendly one many distros use.
 
 ## Starting the installer
 
@@ -12,17 +12,17 @@ From the live session, either:
 
 ## What you'll be asked
 
-1. **Language, region, keyboard** — the usual.
-2. **Desktop choice** — keep the default **XFCE**, or pick **KDE Plasma**. Plasma gets the same pink treatment automatically.
-3. **App bundles** *(optional, multi-select)* — tick any of:
-   - 🎮 **Gaming** — Steam, gaming bits
-   - 🎥 **Streaming** — OBS with virtual camera
-   - 💻 **Development** — VS Code and friends
-   - 📄 **Office** — LibreOffice, Thunderbird, Evince
-4. **Partitioning** — "Erase disk" is the simple path; manual partitioning works too. Full-disk encryption is available on the erase option.
-5. **Your user** — name, password, whether to log in automatically.
+1. **Language, region, keyboard**  -  the usual.
+2. **Desktop choice**  -  keep the default **XFCE**, or pick **KDE Plasma**. Plasma gets the same pink treatment automatically.
+3. **App bundles** *(optional, multi-select)*  -  tick any of:
+   - 🎮 **Gaming**  -  Steam, gaming bits
+   - 🎥 **Streaming**  -  OBS with virtual camera
+   - 💻 **Development**  -  VS Code and friends
+   - 📄 **Office**  -  LibreOffice, Thunderbird, Evince
+4. **Partitioning**  -  "Erase disk" is the simple path; manual partitioning works too. Full-disk encryption is available on the erase option.
+5. **Your user**  -  name, password, whether to log in automatically.
 
-Then it copies everything over — a few minutes — and asks to reboot.
+Then it copies everything over  -  a few minutes  -  and asks to reboot.
 
 ## After the first boot
 

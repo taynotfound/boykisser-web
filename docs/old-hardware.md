@@ -6,23 +6,23 @@ Boykisser Linux runs fine on machines from ~2010 onwards. Here's what to know if
 
 | Your machine | ISO |
 |---|---|
-| Modern — UEFI or BIOS, post-2012 | **Full** or **Netinstall** |
+| Modern  -  UEFI or BIOS, post-2012 | **Full** or **Netinstall** |
 | Pre-2012 / ancient BIOS / Ventoy fails | **Lite** |
 
 The **Lite ISO** is built with BIOS-only syslinux (no grub-efi hybrid) and `nomodeset` baked into the default boot line. This is what lets crusty firmware chainload past the boot menu instead of dropping you at a `grub>` rescue prompt.
 
-Grab it from the [latest release](https://github.com/taynotfound/BoykisserLinux/releases/latest) — file is `boykisser-linux-lite-amd64.iso`.
+Grab it from the [latest release](https://github.com/taynotfound/BoykisserLinux/releases/latest)  -  file is `boykisser-linux-lite-amd64.iso`.
 
 ---
 
 ## Getting it onto a stick
 
-> **Don't use Ventoy.** Ventoy adds its own bootloader chain that old firmware frequently rejects — it's the most common reason people end up at `grub>`. Just write the ISO directly.
+> **Don't use Ventoy.** Ventoy adds its own bootloader chain that old firmware frequently rejects  -  it's the most common reason people end up at `grub>`. Just write the ISO directly.
 
 <details>
 <summary><strong>Linux</strong></summary>
 
-Find your USB drive first — check `lsblk` before and after plugging it in to confirm the device name (usually `/dev/sdb` or `/dev/sdc`).
+Find your USB drive first  -  check `lsblk` before and after plugging it in to confirm the device name (usually `/dev/sdb` or `/dev/sdc`).
 
 ```sh
 sudo dd if=boykisser-linux-lite-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync
@@ -48,7 +48,7 @@ Use [Rufus](https://rufus.ie/):
 <summary><strong>macOS</strong></summary>
 
 ```sh
-# find your disk — look for the one matching your USB size
+# find your disk  -  look for the one matching your USB size
 diskutil list
 
 # unmount it (replace diskN)
@@ -58,7 +58,7 @@ diskutil unmountDisk /dev/diskN
 sudo dd if=boykisser-linux-lite-amd64.iso of=/dev/rdiskN bs=4m
 ```
 
-Use `/dev/rdiskN` (raw device) — it's noticeably faster than `/dev/diskN`.
+Use `/dev/rdiskN` (raw device)  -  it's noticeably faster than `/dev/diskN`.
 
 </details>
 
@@ -68,7 +68,7 @@ Use `/dev/rdiskN` (raw device) — it's noticeably faster than `/dev/diskN`.
 
 If it still won't boot after writing the USB:
 
-1. Enter BIOS setup — usually **F2**, **F12**, **Del**, or **Esc** at the POST screen.
+1. Enter BIOS setup  -  usually **F2**, **F12**, **Del**, or **Esc** at the POST screen.
 2. Find **Boot Mode** or **Boot Type** → set to **Legacy** or enable **CSM** (Compatibility Support Module).
 3. Disable **Secure Boot** if present.
 4. Make sure the USB is first in the boot order.
@@ -80,19 +80,19 @@ If it still won't boot after writing the USB:
 
 ### Sandy Bridge (2nd gen Intel Core, ~2011)
 
-Works well. CSM is standard on Sandy Bridge boards. The i915 driver in Debian trixie handles Sandy Bridge natively — `nomodeset` disables KMS (so no hardware-accelerated compositing), but Xfce doesn't need it and everything runs fine.
+Works well. CSM is standard on Sandy Bridge boards. The i915 driver in Debian trixie handles Sandy Bridge natively  -  `nomodeset` disables KMS (so no hardware-accelerated compositing), but Xfce doesn't need it and everything runs fine.
 
 ### Very old GPUs (pre-2008, or Nouveau-unfriendly Nvidia)
 
-The failsafe boot entry (`boot=live components noapic nomodeset nosplash vga=normal`) in the GRUB/syslinux menu is your friend — it disables practically everything that can go wrong at boot. Select it if the default entry hangs or produces garbled output.
+The failsafe boot entry (`boot=live components noapic nomodeset nosplash vga=normal`) in the GRUB/syslinux menu is your friend  -  it disables practically everything that can go wrong at boot. Select it if the default entry hangs or produces garbled output.
 
 ### 32-bit only CPUs
 
-Not supported — Boykisser Linux is amd64 only. If your CPU genuinely doesn't support 64-bit, it's time for a different distro.
+Not supported  -  Boykisser Linux is amd64 only. If your CPU genuinely doesn't support 64-bit, it's time for a different distro.
 
 ---
 
-## Last resort — install without booting the ISO
+## Last resort  -  install without booting the ISO
 
 If nothing works, you can bootstrap the system from inside any other live Linux (Ubuntu, Debian, whatever you can actually boot):
 
@@ -102,7 +102,7 @@ If nothing works, you can bootstrap the system from inside any other live Linux 
 This installs a real Debian trixie + Xfce base straight to the target disk, bypassing the ISO boot entirely.
 
 ```sh
-# 1. Partition your disk — /dev/sda1 = ext4 root, /dev/sda2 = swap (optional)
+# 1. Partition your disk  -  /dev/sda1 = ext4 root, /dev/sda2 = swap (optional)
 #    Use gparted or: sudo parted /dev/sda mklabel msdos ...
 #    Then format:
 sudo mkfs.ext4 /dev/sda1
@@ -117,14 +117,14 @@ sudo mount --bind /proc /mnt/proc
 sudo mount --bind /sys /mnt/sys
 sudo chroot /mnt
 
-# 4. Inside the chroot — install desktop + bootloader
+# 4. Inside the chroot  -  install desktop + bootloader
 apt update
 apt install task-xfce-desktop lightdm linux-image-amd64 firmware-linux grub-pc
 grub-install /dev/sda
 update-grub
 passwd  # set root password
 
-# 5. Done — exit and reboot
+# 5. Done  -  exit and reboot
 exit
 sudo umount -R /mnt
 sudo reboot
