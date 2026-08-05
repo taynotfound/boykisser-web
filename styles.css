@@ -53,8 +53,10 @@ a:hover { color: #fff; }
 
 /* ---------- nav ---------- */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   display: flex;
   align-items: center;
@@ -83,6 +85,7 @@ a:hover { color: #fff; }
 
 /* ---------- hero ---------- */
 .hero {
+  padding-top: 5rem;
   position: relative;
   z-index: 1;
   border-bottom: 1px solid var(--border-pink);
