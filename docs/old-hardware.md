@@ -133,6 +133,17 @@ sudo reboot
 This gives you a plain Debian trixie + Xfce base. It won't have Boykisser theming or tooling out of the box, but it runs and you can customise from there.
 
 </details>
+---
+
+## Rescue ISOs
+
+If your system won't boot or you need to recover files, grab a dedicated rescue ISO instead of the Boykisser one.
+
+- **[SystemRescue](https://www.system-rescue.org/Download/)** - the go-to. Boots on anything, has GParted, fsck, chroot, network tools. Put it on a second USB.
+- **[Clonezilla](https://clonezilla.org/downloads.php)** - disk imaging and recovery. Good before a risky upgrade.
+
+Flash with the same `dd` command, boot, done. No install needed.
+
 
 ---
 

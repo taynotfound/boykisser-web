@@ -65,3 +65,5 @@ The installer walks you through partitioning, locale, and user setup. A typical 
 - [Downloading & verifying](#downloading)
 - [Installing to disk](#installation)
 - [First steps after install](#after-install)
+
+> **Tip:** Keep a [SystemRescue](https://www.system-rescue.org/) USB around. Invaluable when things go wrong.
