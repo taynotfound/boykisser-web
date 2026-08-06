@@ -45,10 +45,10 @@ The live session runs entirely in RAM  -  nothing you do is written to disk, so 
 
 | | |
 |---|---|
-| Username | `boykisser` |
+| Username | `user` |
 | Password | `live` |
 
-The password is needed for `sudo` commands. Everything else logs in automatically.
+Login with username `user` and password `live`. Everything else logs in automatically after install.
 
 Feel free to browse files, open apps, change settings, break things  -  it all evaporates on reboot. Great for testing compatibility before committing to an install.
 
