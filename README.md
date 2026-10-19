@@ -7,4 +7,4 @@ This repository is archived. It now lives in the Boykisser Linux monorepo:
 The full history was carried over, so nothing was lost. Please open issues and
 pull requests there.
 
-The website at https://boykisser.taymaerz.de is built from \`web/\` there.
+The website at https://boykisser.taymaerz.de is built from `web/` there.
