@@ -1,7 +1,10 @@
-# Boykisser Linux  -  website
+# boykisser-web has moved :3
 
-The landing page for [Boykisser Linux](https://github.com/taynotfound/BoykisserLinux),
-served at **[boykisser.taymaerz.de](https://boykisser.taymaerz.de)**.
+This repository is archived. It now lives in the Boykisser Linux monorepo:
 
-Plain static HTML + CSS + a sprinkle of JS. No build step. :3
+**https://github.com/taynotfound/BoykisserLinux/tree/main/web**
 
+The full history was carried over, so nothing was lost. Please open issues and
+pull requests there.
+
+The website at https://boykisser.taymaerz.de is built from \`web/\` there.
